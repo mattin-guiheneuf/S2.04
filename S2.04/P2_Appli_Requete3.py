@@ -29,6 +29,8 @@ print("\n\n 1. Dessiner un graphique"
       "3. Retour au menu principal")
 choixReq3 = input("Saisissez le chiffre de votre choix : ")
 
+lstChoixPossReq3 = ['1', '2', '3']
+
 while choixReq3 not in lstChoixPossReq3 :
     print("Vous n'avez pas saisi une valeur correpondant à une question."
               "Veuillez adapter votre saisie en conséquence.\n\n")
@@ -41,3 +43,4 @@ elif choixReq3 == '2' :
 else :
     # Retour au menu principal
     import P2_Appli_MenuPrincipal as menuP 
+    menuP.menuPrincip()
