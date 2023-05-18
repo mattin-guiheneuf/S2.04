@@ -11,8 +11,9 @@ conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
 def requete2():
     os.system('cls')
     print("Requête 2 : Quelle région a le plus visité chaque type de page pendant une saison ?")
-    print("Descriptif")
-    print("Les périodes possibles sont : Hiver, Printemps, Eté et Automne.\n")
+    print("Cette requête nous montre les régions qui ont le plus visité chaque type de pages avec le "
+          "nombre d’actions correspondant, sur une période x que vous devez saisir (exprimée en saison).\n")
+    print("Les périodes possibles sont donc : Hiver, Printemps, Eté et Automne.\n")
     print("Elles correspondent à : \n1. Hiver : 20 décembre au 20 mars\n2. Printemps : 21 mars au 21 juin\n3. Eté : 22 juin au 22 septembre\n4. Automne : 23 septembre au 19 décembre")
     saison = input("Quelle saison voulez-vous analyser : ")
 
@@ -35,14 +36,16 @@ def requete2():
     else :
         dateDeb = '23/09/%% %'
         dateFin = '19/12/%% %'
-
-    sql = """
-          """
+    """
+    sql = 
+          
     param = (f'{dateDeb}%', f'{dateFin}%')
     cursor.execute(sql, param)
     for row in cursor.fetchall() :
         print(row)
-
+    """
+    
+    print("Résultat Requête")
 
     print("\n\n 1. Dessiner un graphique"
           "2. Obtenir une analyse"
@@ -65,7 +68,7 @@ def requete2():
         print('Test2')
     elif choixReq2 == '3' :
         # Appeler la fonction r2
-        print('Test3')
+        requete2()
     else :
         # Retourner au menu principal
         import P2_Appli_MenuPrincipal as menuP

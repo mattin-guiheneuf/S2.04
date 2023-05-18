@@ -4,14 +4,8 @@ Created on Tue Apr 25 11:48:39 2023
 
 @author: mguiheneuf
 """
-
-import pyodbc
-conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
-
-
 import sys
 import os
-
 
 def menuPrincip() :
     os.system('cls')
@@ -40,4 +34,6 @@ def menuPrincip() :
     else :
         # Importer le fichier de la Requête 3
         import P2_Appli_Requete3 as r3
-        print(r3)
+        r3.requete3()
+
+print(menuPrincip())

@@ -12,7 +12,7 @@ cursor = conn.cursor()
 def requete1() :
     os.system('cls')
     print("Requête 1 : Quel est le nombre d'actions réalisés par type de pages ?\n")
-    print("Descriptif\n")
+    print("Cette requête compte le nombre d’actions par types de pages.\n")
     
     sql = """SELECT P.type_page, COUNT(ADV.Id_action) AS nbrActions
              FROM Pages P
