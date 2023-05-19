@@ -36,4 +36,3 @@ def menuPrincip() :
         import P2_Appli_Requete3 as r3
         r3.requete3()
 
-print(menuPrincip())
