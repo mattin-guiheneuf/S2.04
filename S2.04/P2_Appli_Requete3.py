@@ -14,47 +14,23 @@ def requete3() :
     print("Cette requête affiche, pour une région que vous devez saisir, les x types de pages les plus fréquentés"
           "et le nombre d’actions effectuées.\n")
     print("On compte dans notre base de données ... régions différentes. Pour garder les échantillons les plus"
-          "intéressants et utiles, nous avons décidé de conserver uniquement les régions ayant effectuées au moins"
-          "... actions.\n")
+          "intéressants et utiles, nous avons décidé de conserver uniquement les régions ayant réalisées au moins"
+          "200 actions.\n")
     print("Les différentes régions sont :\n"
-          "1. Galicia              2.'Danemark                         3.\n"
-          "4.                      5.                         6.\n"
-          "7.                      8.                         9.\n"
-          "10.                     11.                        12.\n"
-          "13.                     14.                        15.\n"
-          "16.                     17.                        18.\n"
-          "19.                     20.                        21.\n"
-          "22.                     23.                        24.\n"
-          "25.                     26.                        27.\n"
-          "28.                     29.                        30.\n")
-      """   'Galicia', 'Danemark', 'País Vasco', 'Región de Murcia',
-           "Côte d'Ivoire", 'Nouvelle Aquitaine', 'Cataluña', 'Ile de France',
-           'Aragón', 'Irlande', 'Occitanie', 'Canarias', 'Andalucía',
-           'Suisse', 'Corse', 'Maroc', 'Castilla y León', 'Mexique',
-           'Castilla-La Mancha', 'Allemagne', 'Comunitat Valenciana',
-           'Hauts de France', "Provence-Alpes-Côte d'Azur", 'Balears, Illes',
-           'Auvergne-Rhône-Alpes', 'Portugal', 'Comunidad de Madrid',
-           'La Rioja', 'Grande Bretagne', 'Bretagne', 'Pays de la Loire',
-           'Kazakhstan ', 'Extremadura', 'Pays Bas', 'Suède', 'Belgique',
-           'Asturias', 'USA', 'Andorra', 'Pologne', 'Brésil', 'Madagascar',
-           'Lithuanie', 'Bourgogne-Franche-Comté', 'Grand Est', 'Italie',
-           'Navarra', 'Nouvelle Zélande', 'Normandie', 'Equateur',
-           'Guadeloupe', 'Inde', 'Brunei', 'Cantabria', 'Russie', 'Chine',
-           'Algérie', 'Roumanie', 'Canada', 'Luxembourg', 'Norvège', 'Malte',
-           'Colombie', 'Croatie', 'Slovaquie', 'Australie',
-           'République Tchèque', 'Hongrie', 'Argentine', 'Corée du Sud',
-           'Panama', 'Afrique du Sud', 'Pérou', 'Turquie', 'Ceuta y Melilla',
-           'Grèce', 'Nicaragua', 'Cuba', 'Venezuela', 'Bolivie', 'Sri Lanka',
-           'Sénégal', 'Syrie', 'Tanzanie', 'Qatar', 'Chypre', 'Honduras',
-           'Polynésie Française', 'Israël', 'Autriche', 'Guatemala', 'Chili',
-           'Viet Nam', 'Finlande', 'Indonésie', 'Egypte', 'Lettonie',
-           'Ukraine', 'Uruguay', 'Gabon', 'Singapour', 'Guinée équatoriale',
-           'Biélorussie', 'Somalie', 'Kenya', 'Monaco', 'Oman', 'Hong-Kong',
-           'Guyanne', 'Islande', 'Arabie Saoudite', 'La Réunion',
-           'Costa Rica', 'Porto Rico', 'Salvador', 'République Dominicaine',
-           'Macédoine', 'Bulgarie', 'Grenade', 'Malaysie', 'Iran', 'Estonie',
-           'Géorgie', 'Albanie', 'Mali', 'Taïwan'
-           """
+          "1. Allemagne              2. Andalucia                         3. Andorra\n"
+          "4. Aragón                     5. Asturias                       6. Auvergne-Rhône-Alpes\n"
+          "7. Balears, Illes                     8. Belgique                       9. Bourgogne-Franche-Comté\n"
+          "10. Bretagne                    11. Canada                        12. Canarias\n"
+          "13. Cantabria                     14. Castilla y León                        15. Castilla-La Mancha\n"
+          "16. Cataluña                     17. Comunidad de Madrid                       18. Comunitat Valenciana\n"
+          "19. Extremadura                     20. Galicia                        21. Grand Est\n"
+          "22. Grande Bretagne                    23. Hauts de France                        24. Ile de France\n"
+          "25. Italie                     26. La Rioja                        27. Navarra\n"
+          "28. Normandie                     29. Nouvelle Aquitaine                        30. Occitanie\n"
+          "31. País Vasco               32. Pays Bas 33. Pays de la Loire\n"
+          "34. Portugal 35. Provence-Alpes-Côte d'Azur 36. Región de Murcia\n"
+          "37. Suisse 38. USA\n" )
+
     input("Saisissez le chiffre de la région que vous souhaitez analyser : ")
     input("Il y a 20 types de pages. Saisissez le nombre de types de pages les plus fréquentés que vous souhaitez analyser : ")
 
