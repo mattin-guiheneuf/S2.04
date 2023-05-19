@@ -14,7 +14,8 @@ def requete2():
     print("Cette requête nous montre les régions qui ont le plus visité chaque type de pages avec le "
           "nombre d’actions correspondant, sur une période x que vous devez saisir (exprimée en saison).\n")
     print("Les périodes possibles sont donc : Hiver, Printemps, Eté et Automne.\n")
-    print("Elles correspondent à : \n1. Hiver : 20 décembre au 20 mars\n2. Printemps : 21 mars au 21 juin\n3. Eté : 22 juin au 22 septembre\n4. Automne : 23 septembre au 19 décembre")
+    print("Elles correspondent à : \n1. Hiver : Décembre, Janvier et Février\n2. Printemps : Mars, Avril et Mai\n"
+          "3. Eté : Juin, Juillet et Août\n4. Automne : Septembre, Octobre et Novembre\n")
     saison = input("Quelle saison voulez-vous analyser : ")
 
     lstValPoss = ['1', '2', '3', '4']
@@ -24,18 +25,7 @@ def requete2():
               "Veuillez adapter votre saisie en conséquence.\n\n")
         saison = input("Quelle saison voulez-vous analyser : ")
 
-    if saison == '1' :
-        dateDeb = '20/12/%% %'
-        dateFin = '20/03/%% %'
-    elif saison == '2' :
-        dateDeb = '21/03/%% %'
-        dateFin = '21/06/%% %'
-    elif saison == '3' :
-        dateDeb = '22/06/%% %'
-        dateFin = '22/09/%% %'
-    else :
-        dateDeb = '23/09/%% %'
-        dateFin = '19/12/%% %'
+
     """
     sql = 
           

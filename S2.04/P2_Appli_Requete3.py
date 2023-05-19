@@ -17,19 +17,31 @@ def requete3() :
           "intéressants et utiles, nous avons décidé de conserver uniquement les régions ayant réalisées au moins"
           "200 actions.\n")
     print("Les différentes régions sont :\n"
-          "1. Allemagne              2. Andalucia                         3. Andorra\n"
-          "4. Aragón                     5. Asturias                       6. Auvergne-Rhône-Alpes\n"
-          "7. Balears, Illes                     8. Belgique                       9. Bourgogne-Franche-Comté\n"
-          "10. Bretagne                    11. Canada                        12. Canarias\n"
-          "13. Cantabria                     14. Castilla y León                        15. Castilla-La Mancha\n"
-          "16. Cataluña                     17. Comunidad de Madrid                       18. Comunitat Valenciana\n"
-          "19. Extremadura                     20. Galicia                        21. Grand Est\n"
-          "22. Grande Bretagne                    23. Hauts de France                        24. Ile de France\n"
-          "25. Italie                     26. La Rioja                        27. Navarra\n"
-          "28. Normandie                     29. Nouvelle Aquitaine                        30. Occitanie\n"
-          "31. País Vasco               32. Pays Bas 33. Pays de la Loire\n"
-          "34. Portugal 35. Provence-Alpes-Côte d'Azur 36. Región de Murcia\n"
-          "37. Suisse 38. USA\n" )
+          "1. Allemagne                 2. Andalucia                        3. Andorra\n"
+          "4. Aragón                    5. Asturias                         6. Auvergne-Rhône-Alpes\n"
+          "7. Balears, Illes            8. Belgique                         9. Bourgogne-Franche-Comté\n"
+          "10. Bretagne                 11. Canada                          12. Canarias\n"
+          "13. Cantabria                14. Castilla y León                 15. Castilla-La Mancha\n"
+          "16. Cataluña                 17. Comunidad de Madrid             18. Comunitat Valenciana\n"
+          "19. Extremadura              20. Galicia                         21. Grand Est\n"
+          "22. Grande Bretagne          23. Hauts de France                 24. Ile de France\n"
+          "25. Italie                   26. La Rioja                        27. Navarra\n"
+          "28. Normandie                29. Nouvelle Aquitaine              30. Occitanie\n"
+          "31. País Vasco               32. Pays Bas                        33. Pays de la Loire\n"
+          "34. Portugal                 35. Provence-Alpes-Côte d'Azur      36. Región de Murcia\n"
+          "37. Suisse                   38. USA\n" )
+    
+    lstRegion = ['Allemagne', 'Andalucia', 'Andorra', 'Aragón', 'Asturias', 'Auvergne-Rhône-Alpes',
+                 'Balears, Illes', 'Belgique', 'Bourgogne-Franche-Comté', 'Bretagne', 'Canada',
+                 'Canarias', 'Cantabria', 'Castilla y León', 'Castilla-La Mancha', 'Cataluña',
+                 'Comunidad de Madrid', 'Comunitat Valenciana', 'Extremadura', 'Galicia', 'Grand Est',
+                 'Grande Bretagne', 'Hauts de France', 'Ile de France', 'Italie', 'La Rioja', 'Navarra',
+                 'Normandie', 'Nouvelle Aquitaine', 'Occitanie', 'País Vasco', 'Pays Bas',
+                 'Pays de la Loire', 'Portugal', 'Provence-Alpes-Côte d\'Azur', 'Región de Murcia',
+                 'Suisse', 'USA']
+    dicoRegion = {}
+    for i in range(1, 39):
+        dicoRegion[i] = lstRegion[i-1]
 
     input("Saisissez le chiffre de la région que vous souhaitez analyser : ")
     input("Il y a 20 types de pages. Saisissez le nombre de types de pages les plus fréquentés que vous souhaitez analyser : ")
