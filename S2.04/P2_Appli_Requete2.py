@@ -4,11 +4,13 @@ Created on Sun May  7 12:50:44 2023
 
 @author: matti
 """
-import os
-import pyodbc
-conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
-
 def requete2():
+    import matplotlib.pyplot as plt
+    import os
+    import pyodbc
+    conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
+    cursor = conn.cursor()
+    
     os.system('cls')
     print("Requête 2 : Quelle région a le plus visité chaque type de page pendant une saison ?")
     print("Cette requête nous montre les régions qui ont le plus visité chaque type de pages avec le "
@@ -21,21 +23,44 @@ def requete2():
     lstValPoss = ['1', '2', '3', '4']
 
     while saison not in lstValPoss :
-        print("Vous n'avez pas saisi une valeur correpondant à une question."
+        print("Vous n'avez pas saisi une valeur correpondant à une saison."
               "Veuillez adapter votre saisie en conséquence.\n\n")
         saison = input("Quelle saison voulez-vous analyser : ")
 
-
-    """
-    sql = 
-          
-    param = (f'{dateDeb}%', f'{dateFin}%')
-    cursor.execute(sql, param)
-    for row in cursor.fetchall() :
-        print(row)
-    """
+    typePage = []
+    region = []
+    nbrActions = []
     
-    print("Résultat Requête")
+    if saison == '1' :
+        sql = """SELECT ActRegionHiver.Type_page AS TypePage, ActRegionHiver.Region1 AS Region, MaxActPageHiver.nbrActMax AS NombreActions
+                 FROM ActRegionHiver
+                 JOIN MaxActPageHiver ON ActRegionHiver.Type_page = MaxActPageHiver.Type_page
+                 WHERE MaxActPageHiver.nbrActMax = ActRegionHiver.nbrActions
+                 GROUP BY TypePage, Region;"""
+    elif saison == '2' :
+        sql = """SELECT ActRegionPrintemps.Type_page AS TypePage, ActRegionPrintemps.Region1 AS Region, MaxActPagePrintemps.nbrActMax AS NombreActions
+                 FROM ActRegionPrintemps
+                 JOIN MaxActPagePrintemps ON ActRegionPrintemps.Type_page = MaxActPagePrintemps.Type_page
+                 WHERE MaxActPagePrintemps.nbrActMax = ActRegionPrintemps.nbrActions
+                 GROUP BY TypePage, Region;"""
+    elif saison == '3' :
+        sql = """SELECT ActRegionEte.Type_page AS TypePage, ActRegionEte.Region1 AS Region, MaxActPageEte.nbrActMax AS NombreActions
+                 FROM ActRegionEte
+                 JOIN MaxActPageEte ON ActRegionEte.Type_page = MaxActPageEte.Type_page
+                 WHERE MaxActPageEte.nbrActMax = ActRegionEte.nbrActions
+                 GROUP BY TypePage, Region;"""
+    else :
+        sql = """SELECT ActRegionAutomne.Type_page AS TypePage, ActRegionAutomne.Region1 AS Region, MaxActPageAutomne.nbrActMax AS NombreActions
+                 FROM ActRegionAutomne
+                 JOIN MaxActPageAutomne ON ActRegionAutomne.Type_page = MaxActPageAutomne.Type_page
+                 WHERE MaxActPageAutomne.nbrActMax = ActRegionAutomne.nbrActions
+                 GROUP BY TypePage, Region;"""
+
+    cursor.execute(sql)
+    for row in cursor.fetchall() :
+        typePage.append(row[0])
+        region.append(row[1])
+        nbrActions.append(row[2])
 
     print("\n\n 1. Dessiner un graphique"
           "2. Obtenir une analyse"
@@ -46,16 +71,29 @@ def requete2():
     lstChoixPossReq2 = [1, 2, 3, 4]
     
     while choixReq2 not in lstChoixPossReq2 :
-        print("Vous n'avez pas saisi une valeur correpondant à une question."
+        print("Vous n'avez pas saisi une valeur correpondant à une action."
               "Veuillez adapter votre saisie en conséquence.\n\n")
         choixReq2 = input("Saisissez le chiffre de votre choix : ")
         
     if choixReq2 == '1' :
         # Dessiner un graphique
-        print('Test1')
+        plt.bar(typePage, nbrActions)
+        plt.xlabel("")
+        plt.ylabel("")
+        plt.title("")
+        plt.show()
+        
     elif choixReq2 == '2' :
         # Obtenir une analyse
-        print('Test2')
+        if saison == '1' :
+            print("")
+        elif saison == '2' :
+            print("")
+        elif saison == '3' :
+            print("")
+        else :
+            print("")
+            
     elif choixReq2 == '3' :
         # Appeler la fonction r2
         requete2()
