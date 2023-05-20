@@ -93,4 +93,4 @@ def requete2():
     else :
         # Retourner au menu principal
         import P2_MenuPrincipal as menuP
-        menuP.menuPrincip()
+        menuP.menuPrincipal()

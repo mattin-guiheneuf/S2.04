@@ -110,7 +110,7 @@ def requete3() :
         plt.xlabel("Types de pages")
         plt.ylabel("Nombre d'actions")
         plt.title("Répartition des types de pages les plus fréquentés par la région choisie\n" 
-                  str(paramRegion))
+                  + str(paramRegion))
         plt.show()
     elif choixReq3 == '2' :
         # Effectuer une autre analyse
@@ -118,4 +118,4 @@ def requete3() :
     else :
         # Retour au menu principal
         import P2_MenuPrincipal as menuP 
-        menuP.menuPrincip()
+        menuP.menuPrincipal()

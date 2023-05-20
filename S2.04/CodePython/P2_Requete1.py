@@ -29,9 +29,12 @@ def requete1() :
     for row in cursor.fetchall():
         typePage.append(row[0])
         nbrActions.append(row[1])
-        
-    print(typePage, nbrActions)
-
+        print(row)
+    
+    """print('Type de pages    |   Nombre d\'actions')
+    for i in range(len(typePage)):
+        print(typePage[i], '|', nbrActions[i])
+"""
     print("\n1. Dessiner un graphique\n"
           "2. Obtenir une analyse\n"
           "3. Retourner au menu principal\n")
@@ -58,4 +61,4 @@ def requete1() :
     else :
         # Retourner au menu principal
         import P2_MenuPrincipal as menuP
-        menuP.menuPrincip()
+        menuP.menuPrincipal()
