@@ -5,7 +5,6 @@ Created on Sun May  7 12:50:44 2023
 @author: matti
 """
 def requete2():
-    import matplotlib.pyplot as plt
     import os
     import pyodbc
     conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
@@ -26,10 +25,6 @@ def requete2():
         print("Vous n'avez pas saisi une valeur correpondant à une saison."
               "Veuillez adapter votre saisie en conséquence.\n\n")
         saison = input("Quelle saison voulez-vous analyser : ")
-
-    typePage = []
-    region = []
-    nbrActions = []
     
     if saison == '1' :
         sql = """SELECT ActRegionHiver.Type_page AS TypePage, ActRegionHiver.Region1 AS Region, MaxActPageHiver.nbrActMax AS NombreActions
@@ -58,15 +53,11 @@ def requete2():
 
     cursor.execute(sql)
     for row in cursor.fetchall() :
-        typePage.append(row[0])
-        region.append(row[1])
-        nbrActions.append(row[2])
-        
-    print(typePage, region, nbrActions)
+        print(row)
 
-    print("\n\n1. Obtenir une analyse"
-          "2. Analyser une autre saison"
-          "3. Retourner au menu principal")
+    print("\n\n1. Obtenir une analyse\n"
+          "2. Analyser une autre saison\n"
+          "3. Retourner au menu principal\n")
     choixReq2 = input("Saisissez le chiffre de votre choix : ")
 
     lstChoixPossReq2 = ['1', '2', '3']

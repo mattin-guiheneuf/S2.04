@@ -30,11 +30,7 @@ def requete1() :
         typePage.append(row[0])
         nbrActions.append(row[1])
         print(row)
-    
-    """print('Type de pages    |   Nombre d\'actions')
-    for i in range(len(typePage)):
-        print(typePage[i], '|', nbrActions[i])
-"""
+
     print("\n1. Dessiner un graphique\n"
           "2. Obtenir une analyse\n"
           "3. Retourner au menu principal\n")
