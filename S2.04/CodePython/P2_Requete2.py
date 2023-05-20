@@ -61,14 +61,15 @@ def requete2():
         typePage.append(row[0])
         region.append(row[1])
         nbrActions.append(row[2])
+        
+    print(typePage, region, nbrActions)
 
-    print("\n\n 1. Dessiner un graphique"
-          "2. Obtenir une analyse"
-          "3. Analyser une autre saison"
-          "4. Retourner au menu principal")
+    print("\n\n1. Obtenir une analyse"
+          "2. Analyser une autre saison"
+          "3. Retourner au menu principal")
     choixReq2 = input("Saisissez le chiffre de votre choix : ")
 
-    lstChoixPossReq2 = [1, 2, 3, 4]
+    lstChoixPossReq2 = ['1', '2', '3']
     
     while choixReq2 not in lstChoixPossReq2 :
         print("Vous n'avez pas saisi une valeur correpondant à une action."
@@ -76,14 +77,6 @@ def requete2():
         choixReq2 = input("Saisissez le chiffre de votre choix : ")
         
     if choixReq2 == '1' :
-        # Dessiner un graphique
-        plt.bar(typePage, nbrActions)
-        plt.xlabel("")
-        plt.ylabel("")
-        plt.title("")
-        plt.show()
-        
-    elif choixReq2 == '2' :
         # Obtenir une analyse
         if saison == '1' :
             print("")
@@ -94,10 +87,10 @@ def requete2():
         else :
             print("")
             
-    elif choixReq2 == '3' :
+    elif choixReq2 == '2' :
         # Appeler la fonction r2
         requete2()
     else :
         # Retourner au menu principal
-        import P2_Appli_MenuPrincipal as menuP
+        import P2_MenuPrincipal as menuP
         menuP.menuPrincip()

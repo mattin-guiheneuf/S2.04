@@ -29,6 +29,8 @@ def requete1() :
     for row in cursor.fetchall():
         typePage.append(row[0])
         nbrActions.append(row[1])
+        
+    print(typePage, nbrActions)
 
     print("\n1. Dessiner un graphique\n"
           "2. Obtenir une analyse\n"
@@ -45,15 +47,15 @@ def requete1() :
     if choixReq1 == '1' :
         # Dessiner un graphique
         plt.bar(typePage, nbrActions)
-        plt.xlabel("")
-        plt.ylabel("")
-        plt.title("")
+        plt.xlabel("Types de pages")
+        plt.ylabel("Nombre d'actions")
+        plt.title("Répartition des actions selon les types de pages")
         plt.show()
         
     elif choixReq1 == '2' :
         # Obtenir une analyse
-        print('Test2')
+        print("On peut remarquer que les types '..', '...' et '...' sont les plus fréquentés")
     else :
         # Retourner au menu principal
-        import P2_Appli_MenuPrincipal as menuP
+        import P2_MenuPrincipal as menuP
         menuP.menuPrincip()

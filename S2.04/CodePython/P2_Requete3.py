@@ -62,7 +62,7 @@ def requete3() :
         print("Vous n'avez pas saisi une valeur adéquate."
               "Veuillez adapter votre saisie en conséquence.\n\n")
         nbrTypePage = input("Il y a 20 types de pages."
-                            "Saisissez le nombre de types de pages les plus fréquentés que vous souhaitez analyser : "
+                            "Saisissez le nombre de types de pages les plus fréquentés que vous souhaitez analyser : ")
     
     lstRang = []
     typePage = []
@@ -90,6 +90,8 @@ def requete3() :
         nbrActions.append(row[1])
         compteurRang += 1
         
+    print(lstRang, typePage, nbrActions)
+    
     print("\n\n 1. Dessiner un graphique"
           "2. Recommencer une analyser"
           "3. Retour au menu principal")
@@ -104,11 +106,16 @@ def requete3() :
     
     if choixReq3 == '1' :
         # Dessiner un graphique
-        print('Test1')
+        plt.bar(typePage, nbrActions)
+        plt.xlabel("Types de pages")
+        plt.ylabel("Nombre d'actions")
+        plt.title("Répartition des types de pages les plus fréquentés par la région choisie\n" 
+                  str(paramRegion))
+        plt.show()
     elif choixReq3 == '2' :
         # Effectuer une autre analyse
         requete3()
     else :
         # Retour au menu principal
-        import P2_Appli_MenuPrincipal as menuP 
+        import P2_MenuPrincipal as menuP 
         menuP.menuPrincip()
