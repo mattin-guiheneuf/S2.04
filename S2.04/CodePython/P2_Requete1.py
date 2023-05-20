@@ -47,8 +47,9 @@ def requete1() :
         
     if choixReq1 == '1' :
         # Dessiner un graphique
+        plt.figure(figsize = (13,8))
         plt.bar(typePage, nbrActions)
-        plt.figure(figsize=(12,6))
+        plt.xticks(rotation=45)
         plt.xlabel("Types de pages")
         plt.ylabel("Nombre d'actions")
         plt.title("Répartition des actions selon les types de pages")
@@ -57,23 +58,27 @@ def requete1() :
         print("\n1. Obtenir une analyse\n"
               "2. Retour au menu principal\n")
         choixReq1 = input("Que souhaitez-vous faire : ")
-        while choixReq1 != '1' or '2' :
-            print("Vous n'avez pas saisi une valeur correpondant à une action."
+        while choixReq1 not in ['1', '2'] :
+            print("Vous n'avez pas saisi une valeur correpondant à une action. "
                   "Veuillez adapter votre saisie en conséquence.\n\n")
             choixReq1 = input("Que souhaitez-vous faire : ")
                              
         if choixReq1 == '1' :
-            print("On peut remarquer que les types '..', '...' et '...' sont les plus fréquentés")
-            input("Appuyez sur une touche pour revenir au menu principal ...")
+            print("On peut remarquer que les types 'Excursion', 'Actualité' et 'PageAccueil' sont les plus fréquentés,"
+                  " tandis que les types 'Recherche', 'PageMentionsLegales' ou 'PagePolitiqueConfidentialité'"
+                  "sont le moins fréquentés. \n")
+            input("Appuyez sur Entrée pour revenir au menu principal ...")
             menuP.menuPrincipal()
         else :
             menuP.menuPrincipal()
             
     elif choixReq1 == '2' :
         # Obtenir une analyse
-        print("On peut remarquer que les types '..', '...' et '...' sont les plus fréquentés")
+        print("On peut remarquer que les types 'Excursion', 'Actualité' et 'PageAccueil' sont les plus fréquentés,"
+              " tandis que les types 'Recherche', 'PageMentionsLegales' ou 'PagePolitiqueConfidentialité'"
+              "sont le moins fréquentés. \n")
         
-        input("Appuyez sur une touche pour revenir au menu principal ...")
+        input("Appuyez sur Entrée pour revenir au menu principal ...")
         menuP.menuPrincipal()
 
     else :

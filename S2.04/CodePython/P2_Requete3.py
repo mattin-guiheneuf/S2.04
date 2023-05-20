@@ -19,8 +19,8 @@ def requete3() :
     print("Cette requête affiche, pour une région que vous devez saisir, les x types de pages les plus fréquentés"
           "et le nombre d’actions effectuées.\n")
     print("On compte dans notre base de données ... régions différentes. Pour garder les échantillons les plus"
-          "intéressants et utiles, nous avons décidé de conserver uniquement les régions ayant réalisées au moins"
-          "200 actions.\n")
+          "intéressants et utiles, nous avons décidé de conserver uniquement les régions ayant\n"
+          " réalisées au moins 200 actions.\n")
     print("Les différentes régions sont :\n"
           "1. Allemagne                 2. Andalucia                        3. Andorra\n"
           "4. Aragón                    5. Asturias                         6. Auvergne-Rhône-Alpes\n"
@@ -64,7 +64,7 @@ def requete3() :
     while nbrTypePage not in lstValNbrTypePage :
         print("Vous n'avez pas saisi une valeur adéquate."
               "Veuillez adapter votre saisie en conséquence.\n\n")
-        nbrTypePage = input("Il y a 20 types de pages."
+        nbrTypePage = input("Il y a 20 types de pages. "
                             "Saisissez le nombre de types de pages les plus fréquentés que vous souhaitez analyser : ")
         print("\n")
     
@@ -108,7 +108,9 @@ def requete3() :
     
     if choixReq3 == '1' :
         # Dessiner un graphique
+        plt.figure(figsize = (12,8))
         plt.bar(typePage, nbrActions)
+        plt.xticks(rotation=45)
         plt.xlabel("Types de pages")
         plt.ylabel("Nombre d'actions")
         plt.title("Répartition des types de pages les plus fréquentés par la région choisie\n" 
@@ -118,7 +120,7 @@ def requete3() :
         print("\n1. Recommencer une analyse\n"
               "2. Retour au menu principal\n")
         choixReq3 = input("Que souhaitez-vous faire : ")
-        while choixReq3 != '1' or '2' :
+        while choixReq3 not in ['1', '2'] :
             print("Vous n'avez pas saisi une valeur correpondant à une action."
                   "Veuillez adapter votre saisie en conséquence.\n\n")
             choixReq3 = input("Que souhaitez-vous faire : ")

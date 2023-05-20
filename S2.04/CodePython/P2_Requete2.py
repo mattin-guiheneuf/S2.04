@@ -71,19 +71,13 @@ def requete2():
         
     if choixReq2 == '1' :
         # Obtenir une analyse
-        if saison == '1' :
-            print("")
-        elif saison == '2' :
-            print("")
-        elif saison == '3' :
-            print("")
-        else :
-            print("")
+        print("La région 'Communidad de Madrid' est celle qui a réalisé le plus d'actions dans"
+              "la grande majorité des types de pages.")
         
         print("\n1. Recommencer une analyse\n"
               "2. Retour au menu principal\n")
         choixReq2 = input("Que souhaitez-vous faire : ")
-        while choixReq2 != '1' or '2' :
+        while choixReq2 not in ['1', '2'] :
             print("Vous n'avez pas saisi une valeur correpondant à une action."
                   "Veuillez adapter votre saisie en conséquence.\n\n")
             choixReq2 = input("Que souhaitez-vous faire : ")
