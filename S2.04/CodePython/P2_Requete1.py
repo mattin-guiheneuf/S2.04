@@ -76,7 +76,7 @@ def requete1() :
         # Obtenir une analyse
         print("On peut remarquer que les types 'Excursion', 'Actualité' et 'PageAccueil' sont les plus fréquentés,"
               " tandis que les types 'Recherche', 'PageMentionsLegales' ou 'PagePolitiqueConfidentialité'"
-              "sont le moins fréquentés. \n")
+              "sont les moins fréquentés. \n")
         
         input("Appuyez sur Entrée pour revenir au menu principal ...")
         menuP.menuPrincipal()
