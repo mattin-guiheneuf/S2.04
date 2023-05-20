@@ -6,6 +6,8 @@ Created on Sun May  7 12:50:21 2023
 """
 
 def requete1() :
+    import P2_MenuPrincipal as menuP
+    
     import matplotlib.pyplot as plt
     import os
     import pyodbc
@@ -46,15 +48,34 @@ def requete1() :
     if choixReq1 == '1' :
         # Dessiner un graphique
         plt.bar(typePage, nbrActions)
+        plt.figure(figsize=(12,6))
         plt.xlabel("Types de pages")
         plt.ylabel("Nombre d'actions")
         plt.title("Répartition des actions selon les types de pages")
         plt.show()
         
+        print("\n1. Obtenir une analyse\n"
+              "2. Retour au menu principal\n")
+        choixReq1 = input("Que souhaitez-vous faire : ")
+        while choixReq1 != '1' or '2' :
+            print("Vous n'avez pas saisi une valeur correpondant à une action."
+                  "Veuillez adapter votre saisie en conséquence.\n\n")
+            choixReq1 = input("Que souhaitez-vous faire : ")
+                             
+        if choixReq1 == '1' :
+            print("On peut remarquer que les types '..', '...' et '...' sont les plus fréquentés")
+            input("Appuyez sur une touche pour revenir au menu principal ...")
+            menuP.menuPrincipal()
+        else :
+            menuP.menuPrincipal()
+            
     elif choixReq1 == '2' :
         # Obtenir une analyse
         print("On peut remarquer que les types '..', '...' et '...' sont les plus fréquentés")
+        
+        input("Appuyez sur une touche pour revenir au menu principal ...")
+        menuP.menuPrincipal()
+
     else :
         # Retourner au menu principal
-        import P2_MenuPrincipal as menuP
         menuP.menuPrincipal()

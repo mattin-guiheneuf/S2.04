@@ -5,6 +5,8 @@ Created on Sun May  7 12:50:44 2023
 @author: matti
 """
 def requete2():
+    import P2_MenuPrincipal as menuP
+    
     import os
     import pyodbc
     conn = pyodbc.connect('DSN=BD_Guiheneuf_Lakartxela')
@@ -77,11 +79,23 @@ def requete2():
             print("")
         else :
             print("")
+        
+        print("\n1. Recommencer une analyse\n"
+              "2. Retour au menu principal\n")
+        choixReq2 = input("Que souhaitez-vous faire : ")
+        while choixReq2 != '1' or '2' :
+            print("Vous n'avez pas saisi une valeur correpondant à une action."
+                  "Veuillez adapter votre saisie en conséquence.\n\n")
+            choixReq2 = input("Que souhaitez-vous faire : ")
+                             
+        if choixReq2 == '1' :
+            requete2()
+        else :
+            menuP.menuPrincipal()
             
     elif choixReq2 == '2' :
         # Appeler la fonction r2
         requete2()
     else :
         # Retourner au menu principal
-        import P2_MenuPrincipal as menuP
         menuP.menuPrincipal()

@@ -118,10 +118,10 @@ def requete3() :
         print("\n1. Recommencer une analyse\n"
               "2. Retour au menu principal\n")
         choixReq3 = input("Que souhaitez-vous faire : ")
-        while choixReq3 != '1' or != '2' :
+        while choixReq3 != '1' or '2' :
             print("Vous n'avez pas saisi une valeur correpondant à une action."
                   "Veuillez adapter votre saisie en conséquence.\n\n")
-            choixReq3 = input(input("Que souhaitez-vous faire : ")
+            choixReq3 = input("Que souhaitez-vous faire : ")
                              
         if choixReq3 == '1' :
             requete3()
